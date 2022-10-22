@@ -13,10 +13,10 @@
 }
 
 .fa-solid {
-    font-size: 30px;
+    @include fontSize(30);
 
     @include devices(tablet) {
-        font-size: 40px;
+        @include fontSize(45);
     }
 }
 

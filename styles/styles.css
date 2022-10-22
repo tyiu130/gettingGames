@@ -221,6 +221,33 @@ template {
   overflow: hidden;
 }
 
+@media (min-width: 481px) {
+  h1 {
+    font-size: 55px;
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 320px) {
+  label {
+    font-size: 25px;
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 481px) {
+  label {
+    font-size: 30px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 481px) {
+  select {
+    font-size: 25px;
+    font-size: 1.25rem;
+  }
+}
+
 .wrapper {
   max-width: 1200px;
   width: 85%;
@@ -248,10 +275,12 @@ footer {
 
 .fa-solid {
   font-size: 30px;
+  font-size: 1.5rem;
 }
 @media (min-width: 481px) {
   .fa-solid {
-    font-size: 40px;
+    font-size: 45px;
+    font-size: 2.25rem;
   }
 }
 

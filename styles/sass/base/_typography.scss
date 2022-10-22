@@ -1,1 +1,23 @@
 // for font sizes
+
+h1 {
+    @include devices(tablet) {
+            @include fontSize(55);
+        }
+}
+
+label {
+    @include devices(mobile) {
+            @include fontSize(25);
+        }
+
+    @include devices(tablet) {
+            @include fontSize(30);
+        }
+}
+
+select {
+    @include devices(tablet) {
+            @include fontSize(25);
+        }
+}
