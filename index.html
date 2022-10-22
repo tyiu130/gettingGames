@@ -8,14 +8,35 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <header>
-        <div class="wrapper">
-            <h1>Gettin' Games</h1>
-            <form action="#">
-                <label for="genre"></label>
-                <select name="genre" id="genre"></select>
-            </form>
-        </div>
-    </header>
+  <header>
+    <div class="wrapper">
+      <h1>Gettin' Games</h1>
+      <button class="infoPopup"> <!--leave for now, first stretch goal--></button>
+      <form action="#">
+        <label for="genre">Choose a genre</label>
+        <select name="genre" id="genre">
+          <option value="please coose an option" disabled selected>Please choose an option</option>
+          <!-- create our list of genres to then make as options here:-->
+          <option value="fantasy">Fantasy</option>
+        </select>
+      </form>
+    </div>
+  </header>
+  <main>
+    <div class="wrapper">
+      <ul class="gameContainer"> <!--contents (li with the img and h2) will be added dynamically later with javascript-->
+        <li class="gameCard">
+          <img src="" alt="">
+          <h2 class="gameName"></h2>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <footer>
+    <div class="wrapper">
+      <p>Made at Juno College by Kirsten Hattori and Terri Yiu</p>
+    </div>
+  </footer>
+<script src="./app.js"></script>
 </body>
 </html>

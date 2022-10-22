@@ -1,3 +1,9 @@
-@import 'setup';
-@import 'form';
-@import 'baseStyles';
+@import "./base/setup";
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./base/typography";
+@import "./base/base";
+
+@import "./layout/header";
+@import "./layout/main";
+@import "./layout/footer";

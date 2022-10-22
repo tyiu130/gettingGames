@@ -1,0 +1,31 @@
+@mixin devices ($breakpoint) {
+  @if $breakpoint ==mobile {
+    @media (min-width: 320px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==tablet {
+    @media (min-width: 481px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==laptop {
+    @media (min-width: 769px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint ==desktop {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+}
+
+// for making font sizes responsive
+@mixin fontSize($sizeValue) {
+  font-size: $sizeValue * 1px;
+  font-size: ($sizeValue/20) * 1rem;
+}
