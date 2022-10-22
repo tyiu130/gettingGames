@@ -228,18 +228,52 @@ template {
 }
 
 h1,
-form {
+form,
+footer {
   text-align: center;
 }
 
 .infoPopup {
   position: absolute;
-  right: 20px;
-  top: 50px;
+  right: 0px;
+  top: -30px;
+  background-color: #FFF;
+  border: none;
+}
+@media (min-width: 769px) {
+  .infoPopup {
+    top: 0;
+  }
+}
+
+.fa-solid {
+  font-size: 30px;
+}
+@media (min-width: 481px) {
+  .fa-solid {
+    font-size: 40px;
+  }
+}
+
+div {
+  position: relative;
 }
 
 header {
   margin-top: 60px;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 select {
@@ -253,5 +287,5 @@ select {
 footer {
   position: fixed;
   bottom: 0;
-  text-align: center;
+  width: 100%;
 }

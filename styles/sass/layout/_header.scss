@@ -1,12 +1,37 @@
 //Button
+
 .infoPopup {
     position: absolute;
-    right: 20px;
-    top: 50px;
+    right: 0px;
+    top: -30px; 
+    background-color: #FFF;
+    border: none;
+
+    @include devices(laptop) {
+            top: 0;
+        }
+}
+
+.fa-solid {
+    font-size: 30px;
+
+    @include devices(tablet) {
+        font-size: 40px;
+    }
+}
+
+div {
+    position: relative;
 }
 
 header {
     margin-top: 60px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 select {
