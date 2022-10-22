@@ -202,14 +202,9 @@ template {
   display: none;
 }
 
-html {
+* {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 .sr-only {
@@ -227,11 +222,36 @@ html {
 }
 
 .wrapper {
-  max-width: 1280px;
-  width: 90%;
+  max-width: 1200px;
+  width: 85%;
   margin: 0 auto;
 }
 
-h1, form {
+h1,
+form {
+  text-align: center;
+}
+
+.infoPopup {
+  position: absolute;
+  right: 20px;
+  top: 50px;
+}
+
+header {
+  margin-top: 60px;
+}
+
+select {
+  background-color: #FFF;
+  border-radius: 3px;
+  border: 2px solid lightgrey;
+  height: 40px;
+  margin-top: 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
   text-align: center;
 }
