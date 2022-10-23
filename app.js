@@ -36,7 +36,7 @@ gettingGames.displayGames = (arrayOfGames) =>{
   const gameContainer = document.querySelector('.gameContainer');
 
   // for resetting the contents of the game container to nothing before appending new stuff to it
-  gameCard.innerHTML = '';
+  // gameCard.innerHTML = '';
 
   console.log(arrayOfGames);
   // includes a foreach loop to go through the array that will be returned by the api call
@@ -66,7 +66,6 @@ gettingGames.displayGames = (arrayOfGames) =>{
 // Create a method (getGamesByGenre) to make API calls, which takes the user input as a parameter (userQuery)
 // When the API call is successful, display the result by appending the data to the results div
 // If the API call fails, display an error message
-
 
 
 gettingGames.init();
