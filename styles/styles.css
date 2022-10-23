@@ -202,14 +202,9 @@ template {
   display: none;
 }
 
-html {
+* {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 .sr-only {
@@ -226,12 +221,117 @@ html {
   overflow: hidden;
 }
 
+.skipLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  left: -1000px;
+  top: 0;
+  z-index: 999;
+}
+.skipLink:focus {
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 481px) {
+  h1 {
+    font-size: 55px;
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 320px) {
+  label {
+    font-size: 25px;
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 481px) {
+  label {
+    font-size: 30px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 481px) {
+  select {
+    font-size: 25px;
+    font-size: 1.25rem;
+  }
+}
+
 .wrapper {
-  max-width: 1280px;
-  width: 90%;
+  max-width: 1200px;
+  width: 85%;
   margin: 0 auto;
 }
 
-h1, form {
+h1,
+form,
+footer {
   text-align: center;
+}
+
+.infoPopup {
+  position: absolute;
+  right: 0px;
+  top: -30px;
+  background-color: #FFF;
+  border: none;
+}
+@media (min-width: 769px) {
+  .infoPopup {
+    top: 0;
+  }
+}
+
+.fa-solid {
+  font-size: 30px;
+  font-size: 1.5rem;
+}
+@media (min-width: 481px) {
+  .fa-solid {
+    font-size: 45px;
+    font-size: 2.25rem;
+  }
+}
+
+div {
+  position: relative;
+}
+
+header {
+  margin-top: 60px;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+select {
+  background-color: #FFF;
+  border-radius: 3px;
+  border: 2px solid lightgrey;
+  height: 40px;
+  margin-top: 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
