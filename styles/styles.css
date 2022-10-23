@@ -221,6 +221,23 @@ template {
   overflow: hidden;
 }
 
+.skipLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  left: -1000px;
+  top: 0;
+  z-index: 999;
+}
+.skipLink:focus {
+  left: 0;
+  right: 0;
+}
+
 @media (min-width: 481px) {
   h1 {
     font-size: 55px;
