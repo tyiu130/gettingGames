@@ -25,15 +25,40 @@ gettingGames.getGames = () => {
     })
     .then(data => {
       let results = data.results
-      console.log(results);
-    })
+      // console.log(results);
+      gettingGames.displayGames(results)
+    });
 }
 
 // method to display the results of the api calls on the page (accepts parameters for: gameName, gamePoster) and is called in the api calling methods with the parameters
-  // includes a foreach loop to o through the array that will be returned by the api call
-  // gettingGames.gameName = results.[].name
-  // gettingGames.gameImg = results[].background_image
+gettingGames.displayGames = (arrayOfGames) =>{
+  // target the gamesUl 
+  const gameContainer = document.querySelector('.gameContainer');
 
+  // for resetting the contents of the game container to nothing before appending new stuff to it
+  gameCard.innerHTML = '';
+
+  console.log(arrayOfGames);
+  // includes a foreach loop to go through the array that will be returned by the api call
+  arrayOfGames.forEach(game => {
+    const gameCard = document.createElement('li');
+    gameCard.classList.add('gameCard');
+
+    // gettingGames.gameName = results.[].name
+    const gameName = document.createElement('h2');
+    // gameName.classList.add(gameName);
+    gameName.textContent = game.name;
+    // gettingGames.gameImg = results[].background_image
+    const gameImg = document.createElement('img');
+    gameImg.src = game.background_image;
+    gameImg.alt = `background image of ${game.name}`;
+
+    // add game info to the gameCard li's and then to the ul
+    gameCard.appendChild(gameName);
+    gameCard.appendChild(gameImg);
+    gameContainer.appendChild(gameCard);
+  });
+}
 
 
 // Create a method (getUserQuery) to update the variable (userQuery) based on user input from the dropdown(in a form)
