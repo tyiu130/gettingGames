@@ -1,0 +1,42 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    
+    @include devices(tablet) {
+       justify-content: space-evenly;   
+    }
+
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    border: solid grey 2px;
+    margin: 10px 0;
+    position: relative;
+    height: 220px;
+    width: 200px;
+
+    @include devices(tablet) {
+        min-width: 30%;
+        max-width: 40%;
+    }
+
+    @include devices(laptop) {
+        min-width: 15%;
+        max-width: 22%;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    
+}
+
+h2 {
+    text-align: center;
+}

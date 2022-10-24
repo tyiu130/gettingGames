@@ -124,4 +124,3 @@ gettingGames.init();
   // expand the form containing the dropdown to have more inputs and a submit button that triggers the api call 
 
   // see more than 20 games 
-
