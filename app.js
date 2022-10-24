@@ -9,17 +9,15 @@ gettingGames.userQuery = '';
 // Create an init method to kick off the setup of the application
 // - calls the local method (getGames) for a random games to start
 // - add a 'change' event listener to call the local method (getUserQuery), to track user input
-gettingGames.init = () => {
+gettingGames.init = function(){
   gettingGames.getGames();
   gettingGames.setUpEventListeners();
 };
 
 // Create a method (getGames) to make API call on page load (no filtering by user inputs)
-gettingGames.getGames = () => {
+gettingGames.getGames = function(){
   gettingGames.url.search = new URLSearchParams({
-    key: gettingGames.rawgApiKey,
-    ordering: 'genres'
-    
+    key: gettingGames.rawgApiKey    
   });
 
   fetch(gettingGames.url)
@@ -34,7 +32,7 @@ gettingGames.getGames = () => {
 }
 
 // method to display the results of the api calls on the page (accepts parameters for: gameName, gamePoster) and is called in the api calling methods with the parameters
-gettingGames.displayGames = (arrayOfGames) => {
+gettingGames.displayGames = function(arrayOfGames){
   // target the gamesUl 
   const gameContainer = document.querySelector('.gameContainer');
   gameContainer.innerHTML = '';
@@ -44,7 +42,7 @@ gettingGames.displayGames = (arrayOfGames) => {
 
   console.log(arrayOfGames);
   // includes a foreach loop to go through the array that will be returned by the api call
-  arrayOfGames.forEach(game => {
+  arrayOfGames.forEach(function(game){
     const gameCard = document.createElement('li');
     gameCard.classList.add('gameCard');
 
@@ -70,7 +68,7 @@ gettingGames.displayGames = (arrayOfGames) => {
 
 // Create a method (getGamesByGenre) to make API calls, which takes the user input as a parameter (userQuery)
 
-gettingGames.setUpEventListeners = function () {
+gettingGames.setUpEventListeners = function(){
 
   document.querySelector('#genre').addEventListener('change', function () {
     const getGamesByGenre = this.value;
