@@ -121,7 +121,8 @@ gettingGames.init();
 // Stretch goals
   // Popup modal button for instructions, the user can click on to open for the instructions on how to use the app
 
+  // see more than 20 games  - pagination?
+  
   // expand the form containing the dropdown to have more inputs and a submit button that triggers the api call 
 
-  // see more than 20 games 
 
