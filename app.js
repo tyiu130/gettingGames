@@ -43,13 +43,25 @@ gettingGames.getGames = function(){
 
   fetch(gettingGames.url)
     .then(function (res) {
-      return res.json()
+      if (res.ok) {
+        return res.json()
+      } else {
+        throw new Error(res.statusText);
+      }
     })
     .then(data => {
       let results = data.results
       // console.log(results);
       gettingGames.displayGames(results)
-    });
+    })
+    .catch((err) => {
+      if (err.message === "Not Found"){
+        alert("We couldn't get the games! Try a different genre.");
+      } else {
+        alert("Something went wrong and we don't know what happened.");
+      }
+    })
+
 }
 
 // method to display the results of the api calls on the page (accepts parameters for: gameName, gamePoster) and is called in the api calling methods with the parameters
@@ -103,13 +115,24 @@ gettingGames.getGamesWithFilters = function (userGenre) {
 
   fetch(gettingGames.url)
     .then(function (res) {
-      return res.json()
+      if (res.ok) {
+        return res.json()
+      } else {
+        throw new Error(res.statusText);
+      }
     })
     .then(data => {
       let results = data.results
       // console.log(results);
       gettingGames.displayGames(results)
-    });
+    })
+    .catch((err) => {
+      if (err.message === "Not Found") {
+        alert("We couldn't get the games! Try a different genre.");
+      } else {
+        alert("Something went wrong and we don't know what happened.");
+      }
+    })
 }
 
 // When the API call is successful, display the result by appending the data to the results div
@@ -124,5 +147,3 @@ gettingGames.init();
   // see more than 20 games  - pagination?
   
   // expand the form containing the dropdown to have more inputs and a submit button that triggers the api call 
-
-
