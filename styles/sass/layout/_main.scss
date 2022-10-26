@@ -2,9 +2,10 @@ ul {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    
+    justify-content: center;
+
     @include devices(tablet) {
-       justify-content: space-evenly;   
+        justify-content: space-evenly;
     }
 
 }
@@ -15,8 +16,9 @@ li {
     border: solid grey 2px;
     margin: 10px 0;
     position: relative;
-    height: 220px;
-    width: 200px;
+    height: 230px;
+    width: 220px;
+
 
     @include devices(tablet) {
         min-width: 30%;
@@ -25,18 +27,39 @@ li {
 
     @include devices(laptop) {
         min-width: 15%;
-        max-width: 22%;
+        max-width: 30%;
+        height: 230px;
+        
+    }
+
+    @include devices(desktop) {
+        min-width: 24%;
+        max-width: 32%;
+        height: 290px;
+        
     }
 }
 
 img {
     width: 100%;
-    height: auto;
+    height: 65%;
     position: absolute;
     bottom: 0;
-    
+    object-fit: cover;
+    object-position: top;
+
+    @include devices(laptop) {
+        height: 64%;
+    }
+
+    @include devices(desktop) {
+        height: 72%;
+    }
+
 }
 
 h2 {
     text-align: center;
+    padding: 0 6px;
+    
 }
