@@ -18,6 +18,8 @@ const gettingGames = {};
 //       gettingGames.displayGames(results)
 //     });
 // }
+// gettingGames.getGameGenres();
+
 
 
 
@@ -32,7 +34,6 @@ gettingGames.userQuery = '';
 gettingGames.init = function(){
   gettingGames.getGames();
   gettingGames.setUpEventListeners();
-  gettingGames.getGameGenres();
 };
 
 // Create a method (getGames) to make API call on page load (no filtering by user inputs)
@@ -55,13 +56,9 @@ gettingGames.getGames = function(){
       gettingGames.displayGames(results)
     })
     .catch((err) => {
-      if (err.message === "Not Found"){
-        alert("We couldn't get the games! Try a different genre.");
-      } else {
         alert("Something went wrong and we don't know what happened.");
       }
-    })
-
+    )
 }
 
 // method to display the results of the api calls on the page (accepts parameters for: gameName, gamePoster) and is called in the api calling methods with the parameters
@@ -122,17 +119,19 @@ gettingGames.getGamesWithFilters = function (userGenre) {
       }
     })
     .then(data => {
-      let results = data.results
-      // console.log(results);
-      gettingGames.displayGames(results)
+      let results = data.results;
+      if (results.length <1) {
+        throw new Error("no data");
+      }
+      gettingGames.displayGames(results);
     })
     .catch((err) => {
-      if (err.message === "Not Found") {
+      if (err.message === "no data") {
         alert("We couldn't get the games! Try a different genre.");
       } else {
         alert("Something went wrong and we don't know what happened.");
-      }
-    })
+      } 
+    });
 }
 
 // When the API call is successful, display the result by appending the data to the results div
