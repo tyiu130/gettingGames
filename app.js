@@ -39,7 +39,8 @@ gettingGames.init = function(){
 // Create a method (getGames) to make API call on page load (no filtering by user inputs)
 gettingGames.getGames = function(){
   gettingGames.url.search = new URLSearchParams({
-    key: gettingGames.rawgApiKey    
+    key: gettingGames.rawgApiKey,
+    page_size: 24    
   });
 
   fetch(gettingGames.url)
@@ -107,7 +108,8 @@ gettingGames.setUpEventListeners = function(){
 gettingGames.getGamesWithFilters = function (userGenre) {
   gettingGames.url.search = new URLSearchParams({
     key: gettingGames.rawgApiKey,
-    genres: userGenre
+    genres: userGenre,
+    page_size: 24    
   });
 
   fetch(gettingGames.url)
@@ -137,12 +139,14 @@ gettingGames.getGamesWithFilters = function (userGenre) {
 // When the API call is successful, display the result by appending the data to the results div
 // If the API call fails, display an error message
 
-
 gettingGames.init();
 
 // Stretch goals
   // Popup modal button for instructions, the user can click on to open for the instructions on how to use the app
+    // Terri
 
   // see more than 20 games  - pagination?
+    // Kirsten
   
   // expand the form containing the dropdown to have more inputs and a submit button that triggers the api call 
+    // both - pair programming during project work time?
