@@ -259,7 +259,15 @@ template {
 }
 
 @media (min-width: 481px) {
-  select {
+  select,
+p {
+    font-size: 25px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 769px) {
+  p {
     font-size: 25px;
     font-size: 1.25rem;
   }
@@ -305,16 +313,29 @@ footer {
   position: absolute;
   left: 50%;
   top: 30%;
-  width: 300px;
+  width: 280px;
   border-radius: 3px;
   border: 2px solid lightgrey;
   text-align: center;
-  -webkit-transform: translate(-50%, -50%) scale(0.5);
-          transform: translate(-50%, -50%) scale(0.5);
+  -webkit-transform: translate(-50%, -50%) scale(0.1);
+          transform: translate(-50%, -50%) scale(0.1);
   padding: 10px;
   background-color: #fff;
   z-index: 10;
   visibility: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+@media (min-width: 481px) {
+  .modal {
+    width: 330px;
+  }
+}
+@media (min-width: 1025px) {
+  .modal {
+    width: 400px;
+    height: 220px;
+  }
 }
 
 .openModal {
@@ -323,33 +344,9 @@ footer {
           transform: translate(-50%, -50%) scale(1);
 }
 
-div {
-  position: relative;
-}
-
-header {
-  margin-top: 60px;
-}
-
-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-select {
-  background-color: #FFF;
-  border-radius: 3px;
-  border: 2px solid lightgrey;
-  height: 40px;
-  margin-top: 20px;
+.closeButton {
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
 }
 
 ul {
@@ -430,7 +427,35 @@ img {
 h2 {
   text-align: center;
   padding: 0 6px;
-  margin: 0;
+}
+
+div {
+  position: relative;
+}
+
+header {
+  margin-top: 60px;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+select {
+  background-color: #FFF;
+  border-radius: 3px;
+  border: 2px solid lightgrey;
+  height: 40px;
+  margin-top: 20px;
 }
 
 footer {
