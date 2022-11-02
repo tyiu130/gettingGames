@@ -145,6 +145,24 @@ gettingGames.init();
   // Popup modal button for instructions, the user can click on to open for the instructions on how to use the app
     // Terri
 
+  const openBtn = document.querySelector('.infoPopup');
+  const closeBtn = document.querySelector('.closeButton');
+  const modal = document.querySelector('.modal');
+
+  openBtn.addEventListener('click', function(event){
+    modal.classList.add('openModal');
+  })
+
+  closeBtn.addEventListener('click', function(event){
+    modal.classList.remove('openModal');
+  })
+
+  // closePopUp.addEventListener('click', function(){
+  //   openModal.classList.remove("openModal");
+  // })
+
+
+
   // see more than 20 games  - pagination?
     // Kirsten
   

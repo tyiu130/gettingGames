@@ -63,3 +63,26 @@ h2 {
     padding: 0 6px;
     
 }
+
+// Form 
+div {
+    position: relative;
+}
+
+header {
+    margin-top: 60px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select {
+    background-color: #FFF;
+    border-radius: 3px;
+    border: 2px solid lightgrey;
+    height: 40px;
+    margin-top: 20px;
+}
