@@ -1,12 +1,12 @@
 // font
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: $baseFont;
+  color: $secondary;
 }
 
 // for font sizes
 
 h1 {
-  font-family: Helvetica, Arial, sans-serif;
     @include devices(tablet) {
             @include fontSize(55);
         }
@@ -33,4 +33,10 @@ p {
     @include devices(laptop) {
         @include fontSize(25);
     }
+}
+
+button {
+  font-weight: 700;
+  @include fontSize(25);
+  font-family: $secondaryFont;
 }

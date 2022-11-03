@@ -1,14 +1,18 @@
 //Button
 .infoPopup {
-    position: absolute;
-    right: 0px;
-    top: -30px; 
-    background-color: #FFF;
-    border: none;
+  color: $tertiary;
+  position: absolute;
+  right: 0px;
+  top: -30px; 
+  background-color: $quaternary;
+  border: none;
+  border-radius: 50%;
+  min-width: 30px;
+  min-height: 30px;
 
-    @include devices(laptop) {
-            top: 0;
-        }
+  @include devices(laptop) {
+    top: 0;
+  }
 }
 
 .fa-solid {

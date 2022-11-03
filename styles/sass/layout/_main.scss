@@ -13,11 +13,12 @@ ul {
 li {
     display: flex;
     flex-direction: column;
-    border: solid grey 2px;
+    border: solid $tertiary 2px;
     margin: 10px 0;
     position: relative;
     height: 230px;
     width: 220px;
+    background-color: $quaternary;
 
 
     @include devices(tablet) {

@@ -238,6 +238,11 @@ template {
   right: 0;
 }
 
+body {
+  font-family: "century gothic", "Avant Garde", Helvetica, Arial, sans-serif;
+  color: #002a00;
+}
+
 @media (min-width: 481px) {
   h1 {
     font-size: 55px;
@@ -273,10 +278,15 @@ p {
   }
 }
 
-.wrapper {
-  max-width: 1200px;
-  width: 85%;
-  margin: 0 auto;
+button {
+  font-weight: 700;
+  font-size: 25px;
+  font-size: 1.25rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  background-color: #fcd5ee;
 }
 
 h1,
@@ -285,12 +295,22 @@ footer {
   text-align: center;
 }
 
+.wrapper {
+  max-width: 1200px;
+  width: 85%;
+  margin: 0 auto;
+}
+
 .infoPopup {
+  color: #36454f;
   position: absolute;
   right: 0px;
   top: -30px;
-  background-color: #FFF;
+  background-color: #fff;
   border: none;
+  border-radius: 50%;
+  min-width: 30px;
+  min-height: 30px;
 }
 @media (min-width: 769px) {
   .infoPopup {
@@ -376,11 +396,12 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: solid grey 2px;
+  border: solid #36454f 2px;
   margin: 10px 0;
   position: relative;
   height: 230px;
   width: 220px;
+  background-color: #fff;
 }
 @media (min-width: 481px) {
   li {
@@ -462,4 +483,5 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+  color: #36454f;
 }
