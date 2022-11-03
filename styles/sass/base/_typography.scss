@@ -1,3 +1,9 @@
+// font
+body {
+  font-family: $baseFont;
+  color: $secondary;
+}
+
 // for font sizes
 
 h1 {
@@ -27,4 +33,10 @@ p {
     @include devices(laptop) {
         @include fontSize(25);
     }
+}
+
+button {
+  font-weight: 700;
+  @include fontSize(25);
+  font-family: $secondaryFont;
 }
