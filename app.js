@@ -24,7 +24,7 @@ const gettingGames = {};
 
 
 // Initialize preset data in the dedicated properties
-gettingGames.url = new URL('http://api.rawg.io/api/games');
+gettingGames.url = new URL('https://api.rawg.io/api/games');
 gettingGames.rawgApiKey = 'ee7f1b60d0424455b0c8ac0b09a03e17';
 gettingGames.userQuery = '';
 
