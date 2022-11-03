@@ -1,6 +1,12 @@
+// font
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 // for font sizes
 
 h1 {
+  font-family: Helvetica, Arial, sans-serif;
     @include devices(tablet) {
             @include fontSize(55);
         }

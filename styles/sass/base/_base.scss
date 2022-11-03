@@ -1,13 +1,17 @@
 // for global styles - rules that will be applied to the whole page
 
-.wrapper {
-  max-width: 1200px;
-  width: 85%;
-  margin: 0 auto;
+body {
+  background-color: #ffc7e9;
 }
 
 h1,
 form,
 footer {
   text-align: center;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 85%;
+  margin: 0 auto;
 }
