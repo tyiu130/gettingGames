@@ -1,24 +1,23 @@
 // Create an app object (gettingGames)
 const gettingGames = {};
 
-// Api call method for doing more digging
-// gettingGames.genreUrl = new URL('https://api.rawg.io/api/genres');
-// gettingGames.getGameGenres = function () {
-//   gettingGames.genreUrl.search = new URLSearchParams({
-//     key: gettingGames.rawgApiKey
-//   });
+// //Api call method for doing more digging
+gettingGames.genreUrl = new URL('https://api.rawg.io/api/genres');
+gettingGames.getGameGenres = function () {
+  gettingGames.genreUrl.search = new URLSearchParams({
+    key: gettingGames.rawgApiKey
+  });
 
-//   fetch(gettingGames.genreUrl)
-//     .then(function (res) {
-//       return res.json()
-//     })
-//     .then(data => {
-//       let results = data.results
-//       console.log(results);
-//       gettingGames.displayGames(results)
-//     });
-// }
-// gettingGames.getGameGenres();
+  fetch(gettingGames.genreUrl)
+    .then(function (res) {
+      return res.json()
+    })
+    .then(data => {
+      let results = data.results
+      console.log(results);
+      gettingGames.displayGames(results)
+    });
+}
 
 
 
@@ -34,6 +33,9 @@ gettingGames.userQuery = '';
 gettingGames.init = function(){
   gettingGames.getGames();
   gettingGames.setUpEventListeners();
+
+  gettingGames.getGameGenres();
+
 };
 
 // Create a method (getGames) to make API call on page load (no filtering by user inputs)
@@ -162,7 +164,7 @@ gettingGames.init();
 
   modalBackground.addEventListener('click', function(event){
     // if the click happens on the modalbackground && !modal then do the class remove stuff
-    if(event.target('.modalBackground') && !event.target('.modal')){
+    if(event.target === modalBackground){
       modal.classList.remove('openModal');
       modalBackground.classList.remove('openModal');
     }

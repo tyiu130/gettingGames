@@ -240,7 +240,7 @@ template {
 
 body {
   font-family: "century gothic", "Avant Garde", Helvetica, Arial, sans-serif;
-  color: #002a00;
+  color: rgb(0, 42, 0);
 }
 
 @media (min-width: 481px) {
@@ -302,11 +302,11 @@ footer {
 }
 
 .infoPopup {
-  color: #36454f;
+  color: rgb(54, 69, 79);
   position: absolute;
   right: 0px;
   top: -30px;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   border: none;
   border-radius: 50%;
   min-width: 30px;
@@ -362,9 +362,9 @@ footer {
   position: absolute;
   left: 50%;
   top: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  background-color: #36454f;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(54, 69, 79, 0.8);
   z-index: 10;
   visibility: hidden;
 }
@@ -407,12 +407,12 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: solid #36454f 2px;
+  border: solid rgb(54, 69, 79) 2px;
   margin: 10px 0;
   position: relative;
   height: 230px;
   width: 220px;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
 }
 @media (min-width: 481px) {
   li {
@@ -494,5 +494,5 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
-  color: #36454f;
+  color: rgb(54, 69, 79);
 }
