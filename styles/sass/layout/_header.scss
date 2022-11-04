@@ -57,6 +57,7 @@
   background-color: $quinary;
   z-index: 10;
   visibility: hidden;
+  transform: translate(-50%, -50%) scale(0.1);
 }
 
 .openModal {
