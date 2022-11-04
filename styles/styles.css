@@ -367,6 +367,8 @@ footer {
   background-color: rgba(54, 69, 79, 0.8);
   z-index: 10;
   visibility: hidden;
+  -webkit-transform: translate(-50%, -50%) scale(0.1);
+          transform: translate(-50%, -50%) scale(0.1);
 }
 
 .openModal {
