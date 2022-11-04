@@ -148,18 +148,25 @@ gettingGames.init();
   const openBtn = document.querySelector('.infoPopup');
   const closeBtn = document.querySelector('.closeButton');
   const modal = document.querySelector('.modal');
+  const modalBackground = document.querySelector('.modalBackground');
 
   openBtn.addEventListener('click', function(event){
     modal.classList.add('openModal');
+    modalBackground.classList.add('openModal');
   })
 
   closeBtn.addEventListener('click', function(event){
     modal.classList.remove('openModal');
+    modalBackground.classList.remove('openModal');
   })
 
-  // closePopUp.addEventListener('click', function(){
-  //   openModal.classList.remove("openModal");
-  // })
+  modalBackground.addEventListener('click', function(event){
+    // if the click happens on the modalbackground && !modal then do the class remove stuff
+    if(event.target('.modalBackground') && !event.target('.modal')){
+      modal.classList.remove('openModal');
+      modalBackground.classList.remove('openModal');
+    }
+  })
 
 
 
