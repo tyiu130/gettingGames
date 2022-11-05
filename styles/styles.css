@@ -278,6 +278,7 @@ p {
   }
 }
 
+a,
 button {
   font-weight: 700;
   font-size: 25px;
@@ -485,11 +486,29 @@ form {
 }
 
 select {
-  background-color: #FFF;
+  background-color: rgb(255, 255, 255);
   border-radius: 3px;
-  border: 2px solid lightgrey;
+  border: 2px solid rgb(54, 69, 79);
   height: 40px;
   margin-top: 20px;
+}
+
+.pages {
+  border: none;
+  height: auto;
+  min-width: 0px;
+  max-width: 30px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.pageNums {
+  min-width: 30px;
+  min-height: 30px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  text-decoration: none;
+  text-align: center;
+  padding: 3px 0;
 }
 
 footer {

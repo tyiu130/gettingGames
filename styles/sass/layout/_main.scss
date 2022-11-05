@@ -81,9 +81,27 @@ form {
 }
 
 select {
-    background-color: #FFF;
+    background-color: $quaternary;
     border-radius: 3px;
-    border: 2px solid lightgrey;
+    border: 2px solid $tertiary;
     height: 40px;
     margin-top: 20px;
+}
+
+.pages {
+  border: none;
+  height: auto;
+  min-width: 0px;
+  max-width: 30px;
+  background-color: $senary;
+}
+
+.pageNums {
+  min-width: 30px;
+  min-height: 30px;
+  background-color: $quaternary;
+  border-radius: 50%;
+  text-decoration: none;
+  text-align: center;
+  padding: 3px 0;
 }

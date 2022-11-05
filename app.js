@@ -28,6 +28,7 @@ const gettingGames = {};
 gettingGames.url = new URL('https://api.rawg.io/api/games');
 gettingGames.rawgApiKey = 'ee7f1b60d0424455b0c8ac0b09a03e17';
 gettingGames.userQuery = '';
+// gettingGames.pageNum = 1; //sets the default pageNum so that the api call with filters can be made with or without users changing the pageNum by clicking on the nav inputs
 
 // Create an init method to kick off the setup of the application
 // - calls the local method (getGames) for a random games to start
@@ -64,7 +65,7 @@ gettingGames.getGames = function(){
 }
 
 // method to display the results of the api calls on the page (accepts parameters for: gameName, gamePoster) and is called in the api calling methods with the parameters
-gettingGames.displayGames = function(arrayOfGames){
+gettingGames.displayGames = function(arrayOfGames){ 
   // target the gamesUl 
   const gameContainer = document.querySelector('.gameContainer');
   gameContainer.innerHTML = '';
@@ -72,7 +73,7 @@ gettingGames.displayGames = function(arrayOfGames){
   // for resetting the contents of the game container to nothing before appending new stuff to it
   // gameCard.innerHTML = '';
 
-  console.log(arrayOfGames);
+  // console.log(arrayOfGames);
   // includes a foreach loop to go through the array that will be returned by the api call
   arrayOfGames.forEach(function(game){
     const gameCard = document.createElement('li');
@@ -105,14 +106,30 @@ gettingGames.setUpEventListeners = function(){
   })
 }
 
+gettingGames.pagination = function (numOfGames) {
+  // get the count of games returned from the api and do math to divide it by 24 (=the number of games displayed on the page at once)
+    // ~ for adventure genre this turned out to be 5281 lis needed. I propose we adjust the app so that it returns the top 100 games based on rating to the player. (there is a way to have the returned games sorted by rating in the searchParams) // not sure how to sort the returned games. i tried using ordering as a search param but i'm not sure how it is sorting the games/if i needed to put in a score?
+  // create that many numbered li's in the nav //~ because we know that we're only going to be displaying 100 games, we only need 5 pages of games. a ***stretch goal*** could be to have pagination for all the games in the genre. but when we add more filter options, the number of returned games should be smaller and easier to manage....?
+  //~not needed at this juncture //add event listners to the nav ul for clicks on lis that aren't there on page load
+  // give the lis the same value as the count
+  //~not needed at this juncture // update the value of pageNum based on the li the user selects with the click event
+  // call the gettingGames.getGamesWithFilters method with the updated pageNum
+}
+
 // Create a method (getGamesByGenre) to make API calls, which takes the user input as a parameter (userQuery) - receives arguments of userQueries when called in the event listeners 
+  // pagination:
+    // take the pageNum from a function that listens to the user interaction (nav buttons) and puts it into the api call
+      // updates the variable: gettingGames.pageNum
 gettingGames.getGamesWithFilters = function (userGenre) {
   gettingGames.url.search = new URLSearchParams({
     key: gettingGames.rawgApiKey,
     genres: userGenre,
-    page_size: 24    
-  });
+    page_size: 24
+    // page: gettingGames.pageNum
+    // ordering: '-matacritic'
 
+  });
+  console.log(userGenre);
   fetch(gettingGames.url)
     .then(function (res) {
       if (res.ok) {
@@ -122,6 +139,7 @@ gettingGames.getGamesWithFilters = function (userGenre) {
       }
     })
     .then(data => {
+      // let numOfGames = data.count;//pass this number to the method that appends the number of pages there are to the nav list - save data.count as a var and call the pagination function with it
       let results = data.results;
       if (results.length <1) {
         throw new Error("no data");
@@ -136,6 +154,8 @@ gettingGames.getGamesWithFilters = function (userGenre) {
       } 
     });
 }
+
+
 
 // When the API call is successful, display the result by appending the data to the results div
 // If the API call fails, display an error message

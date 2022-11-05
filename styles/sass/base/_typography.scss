@@ -35,7 +35,8 @@ p {
     }
 }
 
-button {
+a,
+button{
   font-weight: 700;
   @include fontSize(25);
   font-family: $secondaryFont;
