@@ -472,9 +472,9 @@ form {
 }
 
 select {
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 3px;
-  border: 2px solid lightgrey;
+  border: 2px solid #36454f;
   height: 40px;
   margin-top: 20px;
 }
