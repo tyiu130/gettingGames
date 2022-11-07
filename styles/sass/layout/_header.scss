@@ -9,18 +9,16 @@
   border-radius: 50%;
   min-width: 30px;
   min-height: 30px;
+  @include fontSize(30);
+  
+  @include devices(tablet) {
+    @include fontSize(45);
+    min-width: 45px;
+  }
 
   @include devices(laptop) {
     top: 0;
   }
-}
-
-.fa-solid {
-    @include fontSize(30);
-
-    @include devices(tablet) {
-        @include fontSize(45);
-    }
 }
 
 .modal {
