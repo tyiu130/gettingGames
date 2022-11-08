@@ -345,12 +345,12 @@ button:hover {
   top: 30%;
   width: 280px;
   border-radius: 3px;
-  border: 2px solid lightgrey;
+  border: 2px solid rgb(54, 69, 79);
   text-align: center;
   -webkit-transform: translate(-50%, -50%) scale(0.1);
           transform: translate(-50%, -50%) scale(0.1);
   padding: 10px;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   z-index: 20;
   visibility: hidden;
   -webkit-transition: 0.2s;

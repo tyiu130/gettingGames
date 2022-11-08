@@ -28,11 +28,11 @@
     top: 30%;
     width: 280px;
     border-radius: 3px;
-    border: 2px solid lightgrey;
+    border: 2px solid $tertiary;
     text-align: center;
     transform: translate(-50%, -50%) scale(0.1);
     padding: 10px;
-    background-color: #fff;
+    background-color: $quaternary;
     z-index: 20;
     visibility: hidden;
     transition: 0.2s;
