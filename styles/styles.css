@@ -295,6 +295,11 @@ footer {
   text-align: center;
 }
 
+button,
+select {
+  cursor: pointer;
+}
+
 .wrapper {
   max-width: 1200px;
   width: 85%;
@@ -311,21 +316,19 @@ footer {
   border-radius: 50%;
   min-width: 30px;
   min-height: 30px;
-}
-@media (min-width: 769px) {
-  .infoPopup {
-    top: 0;
-  }
-}
-
-.fa-solid {
   font-size: 30px;
   font-size: 1.5rem;
 }
 @media (min-width: 481px) {
-  .fa-solid {
+  .infoPopup {
     font-size: 45px;
     font-size: 2.25rem;
+    min-width: 45px;
+  }
+}
+@media (min-width: 769px) {
+  .infoPopup {
+    top: 0;
   }
 }
 
@@ -485,9 +488,9 @@ form {
 }
 
 select {
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 3px;
-  border: 2px solid lightgrey;
+  border: 2px solid #36454f;
   height: 40px;
   margin-top: 20px;
 }
