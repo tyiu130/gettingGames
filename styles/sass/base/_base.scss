@@ -15,6 +15,12 @@ select {
   cursor: pointer;
 }
 
+button:focus,
+button:hover {
+  background-color: $secondary;
+  color: $quaternary;
+}
+
 .wrapper {
   max-width: 1200px;
   width: 85%;

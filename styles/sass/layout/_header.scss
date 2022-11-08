@@ -9,6 +9,7 @@
   border-radius: 50%;
   min-width: 30px;
   min-height: 30px;
+  cursor: help;
   @include fontSize(30);
   
   @include devices(tablet) {
