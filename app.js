@@ -71,7 +71,7 @@ gettingGames.displayGames = function(arrayOfGames){
   // for resetting the contents of the game container to nothing before appending new stuff to it
   // gameCard.innerHTML = '';
 
-  console.log(arrayOfGames);
+  // console.log(arrayOfGames);
   // includes a foreach loop to go through the array that will be returned by the api call
   arrayOfGames.forEach(function(game){
     const gameCard = document.createElement('li');
