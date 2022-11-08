@@ -300,6 +300,12 @@ select {
   cursor: pointer;
 }
 
+button:focus,
+button:hover {
+  background-color: rgb(0, 42, 0);
+  color: rgb(255, 255, 255);
+}
+
 .wrapper {
   max-width: 1200px;
   width: 85%;
@@ -316,6 +322,7 @@ select {
   border-radius: 50%;
   min-width: 30px;
   min-height: 30px;
+  cursor: help;
   font-size: 30px;
   font-size: 1.5rem;
 }
@@ -488,9 +495,9 @@ form {
 }
 
 select {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   border-radius: 3px;
-  border: 2px solid #36454f;
+  border: 2px solid rgb(54, 69, 79);
   height: 40px;
   margin-top: 20px;
 }
