@@ -28,6 +28,8 @@ const gettingGames = {};
 gettingGames.url = new URL('https://api.rawg.io/api/games');
 gettingGames.rawgApiKey = 'ee7f1b60d0424455b0c8ac0b09a03e17';
 gettingGames.userQuery = '';
+gettingGames.selectedPage = 1;
+
 // gettingGames.pageNum = 1; //sets the default pageNum so that the api call with filters can be made with or without users changing the pageNum by clicking on the nav inputs
 
 // Create an init method to kick off the setup of the application
@@ -99,11 +101,21 @@ gettingGames.displayGames = function(arrayOfGames){
 // Create a method (getUserQuery) to update the variable (userQuery) based on user input from the dropdown(in a form) - event listeners
 gettingGames.setUpEventListeners = function(){
   const userQuery = document.querySelector('#genre');
+  let getGamesByGenre = '';
   userQuery.addEventListener('change', function (event) {
     event.preventDefault();
-    const getGamesByGenre = this.value;
+    getGamesByGenre = this.value;
     gettingGames.getGamesWithFilters(getGamesByGenre);
-  })
+  });
+  const pageNumbers = document.querySelectorAll('.pageNums');
+  pageNumbers.forEach(element => {
+    element.addEventListener('click', function (event) {
+      event.preventDefault();
+      gettingGames.selectedPage = event.target.id;
+      console.log(gettingGames.selectedPage);
+    });
+  });
+  // do a for each to target the id of the selected a  
 }
 
 gettingGames.pagination = function (numOfGames) {
@@ -124,8 +136,8 @@ gettingGames.getGamesWithFilters = function (userGenre) {
   gettingGames.url.search = new URLSearchParams({
     key: gettingGames.rawgApiKey,
     genres: userGenre,
-    page_size: 24
-    // page: gettingGames.pageNum
+    page_size: 24,
+    page: gettingGames.selectedPage
     // ordering: '-matacritic'
 
   });
@@ -196,3 +208,8 @@ gettingGames.init();
   
   // expand the form containing the dropdown to have more inputs and a submit button that triggers the api call 
     // both - pair programming during project work time?
+
+    // eventhandling targets the value of the page and the dropdown selection value and feeding that to the api call. 
+    // so the api call search params will be looking for page number and genre
+      //take the target out of the forloop?
+      
