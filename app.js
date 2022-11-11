@@ -114,11 +114,14 @@ gettingGames.setUpEventListeners = function(){
       gettingGames.selectedPage = event.target.id;
       // console.log(gettingGames.selectedPage);
       if (pageNumber.id === gettingGames.selectedPage) {
-        pageNumber.classList.toggle('currentPage');
+        pageNumber.classList.add('currentPage');
         console.log(pageNumber);
+      } else if (pageNumber.id != gettingGames.selectedPage) {
+        pageNumber.classList.remove('currentPage');
       }
       gettingGames.getGamesWithFilters(getGamesByGenre);
     });
+    //with subsequent clicks of the page numbers, the class lists are not updating to remove currentPage. it's savign teh state/history of having been clicked.
     // let classList = gettingGames.selectedPage.classList;
     // classList.toggle('currentPage');
     // // having the styling reflect the page that the user has selected/is on 
