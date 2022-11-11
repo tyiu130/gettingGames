@@ -511,6 +511,11 @@ select {
   padding: 3px 0;
 }
 
+.currentPage {
+  color: rgb(252, 213, 238);
+  background-color: rgb(0, 42, 0);
+}
+
 footer {
   position: relative;
   bottom: 0;

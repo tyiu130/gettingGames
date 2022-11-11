@@ -27,7 +27,7 @@ const gettingGames = {};
 // Initialize preset data in the dedicated properties
 gettingGames.url = new URL('https://api.rawg.io/api/games');
 gettingGames.rawgApiKey = 'ee7f1b60d0424455b0c8ac0b09a03e17';
-gettingGames.userQuery = '';
+gettingGames.userQuery = 'action';
 gettingGames.selectedPage = 1;
 
 // gettingGames.pageNum = 1; //sets the default pageNum so that the api call with filters can be made with or without users changing the pageNum by clicking on the nav inputs
@@ -108,12 +108,26 @@ gettingGames.setUpEventListeners = function(){
     gettingGames.getGamesWithFilters(getGamesByGenre);
   });
   const pageNumbers = document.querySelectorAll('.pageNums');
-  pageNumbers.forEach(element => {
-    element.addEventListener('click', function (event) {
+  pageNumbers.forEach(pageNumber => {
+    pageNumber.addEventListener('click', function (event) {
       event.preventDefault();
       gettingGames.selectedPage = event.target.id;
-      console.log(gettingGames.selectedPage);
+      // console.log(gettingGames.selectedPage);
+      if (pageNumber.id === gettingGames.selectedPage) {
+        pageNumber.classList.toggle('currentPage');
+        console.log(pageNumber);
+      }
+      gettingGames.getGamesWithFilters(getGamesByGenre);
     });
+    // let classList = gettingGames.selectedPage.classList;
+    // classList.toggle('currentPage');
+    // // having the styling reflect the page that the user has selected/is on 
+    // // target the selected
+
+    // target 
+    // the id of the a = if the value of gettingGames.selectedPage {
+      // a.classList.add('currentPage);
+    // }
   });
   // do a for each to target the id of the selected a  
 }
