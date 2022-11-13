@@ -107,6 +107,28 @@ gettingGames.setUpEventListeners = function(){
     getGamesByGenre = this.value;
     gettingGames.getGamesWithFilters(getGamesByGenre);
   });
+  const openBtn = document.querySelector('.infoPopup');
+  const closeBtn = document.querySelector('.closeButton');
+  const modal = document.querySelector('.modal');
+  const modalBackground = document.querySelector('.modalBackground');
+
+  openBtn.addEventListener('click', function (event) {
+    modal.classList.add('openModal');
+    modalBackground.classList.add('openModal');
+  })
+
+  closeBtn.addEventListener('click', function (event) {
+    modal.classList.remove('openModal');
+    modalBackground.classList.remove('openModal');
+  })
+
+  modalBackground.addEventListener('click', function (event) {
+    // if the click happens on the modalbackground && !modal then do the class remove stuff
+    if (event.target === modalBackground) {
+      modal.classList.remove('openModal');
+      modalBackground.classList.remove('openModal');
+    }
+  })
   const pageNumbers = document.querySelectorAll('.pageNums');
   pageNumbers.forEach(pageNumber => {
     pageNumber.addEventListener('click', function (event) {
@@ -143,6 +165,8 @@ gettingGames.pagination = function (numOfGames) {
   // give the lis the same value as the count
   //~not needed at this juncture // update the value of pageNum based on the li the user selects with the click event
   // call the gettingGames.getGamesWithFilters method with the updated pageNum
+
+  
 }
 
 // Create a method (getGamesByGenre) to make API calls, which takes the user input as a parameter (userQuery) - receives arguments of userQueries when called in the event listeners 
@@ -189,35 +213,15 @@ gettingGames.getGamesWithFilters = function (userGenre) {
 // When the API call is successful, display the result by appending the data to the results div
 // If the API call fails, display an error message
 
-gettingGames.init();
+
 
 // Stretch goals
   // Popup modal button for instructions, the user can click on to open for the instructions on how to use the app
     // Terri
 
-  const openBtn = document.querySelector('.infoPopup');
-  const closeBtn = document.querySelector('.closeButton');
-  const modal = document.querySelector('.modal');
-  const modalBackground = document.querySelector('.modalBackground');
+ 
 
-  openBtn.addEventListener('click', function(event){
-    modal.classList.add('openModal');
-    modalBackground.classList.add('openModal');
-  })
-
-  closeBtn.addEventListener('click', function(event){
-    modal.classList.remove('openModal');
-    modalBackground.classList.remove('openModal');
-  })
-
-  modalBackground.addEventListener('click', function(event){
-    // if the click happens on the modalbackground && !modal then do the class remove stuff
-    if(event.target === modalBackground){
-      modal.classList.remove('openModal');
-      modalBackground.classList.remove('openModal');
-    }
-  })
-
+  gettingGames.init();
 
 
   // see more than 20 games  - pagination?

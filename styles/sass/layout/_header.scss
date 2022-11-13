@@ -9,18 +9,17 @@
   border-radius: 50%;
   min-width: 30px;
   min-height: 30px;
+  cursor: help;
+  @include fontSize(30);
+  
+  @include devices(tablet) {
+    @include fontSize(45);
+    min-width: 45px;
+  }
 
   @include devices(laptop) {
     top: 0;
   }
-}
-
-.fa-solid {
-    @include fontSize(30);
-
-    @include devices(tablet) {
-        @include fontSize(45);
-    }
 }
 
 .modal {
@@ -29,11 +28,11 @@
     top: 30%;
     width: 280px;
     border-radius: 3px;
-    border: 2px solid lightgrey;
+    border: 2px solid $tertiary;
     text-align: center;
     transform: translate(-50%, -50%) scale(0.1);
     padding: 10px;
-    background-color: #fff;
+    background-color: $quaternary;
     z-index: 20;
     visibility: hidden;
     transition: 0.2s;
