@@ -36,8 +36,9 @@ gettingGames.selectedPage = 1;
 // - calls the local method (getGames) for a random games to start
 // - add a 'change' event listener to call the local method (getUserQuery), to track user input
 gettingGames.init = function(){
-  gettingGames.getGames();
+  // gettingGames.getGames();
   gettingGames.setUpEventListeners();
+  gettingGames.getGamesWithFilters()
 };
 
 // Create a method (getGames) to make API call on page load (no filtering by user inputs)
@@ -107,7 +108,6 @@ gettingGames.setUpEventListeners = function(){
     getGamesByGenre = this.value;
     gettingGames.getGamesWithFilters(getGamesByGenre);
   });
-  
   const openBtn = document.querySelector('.infoPopup');
   const closeBtn = document.querySelector('.closeButton');
   const modal = document.querySelector('.modal');
@@ -130,18 +130,19 @@ gettingGames.setUpEventListeners = function(){
       modalBackground.classList.remove('openModal');
     }
   })
+
   const pageNumbers = document.querySelectorAll('.pageNums');
   pageNumbers.forEach(pageNumber => {
     pageNumber.addEventListener('click', function (event) {
       event.preventDefault();
       gettingGames.selectedPage = event.target.id;
       // console.log(gettingGames.selectedPage);
-      if (pageNumber.id === gettingGames.selectedPage) {
+      if (pageNumber.id != gettingGames.selectedPage) {
+        pageNumber.classList.replace('currentPage', '');
+      } else if (pageNumber.id === gettingGames.selectedPage) {
         pageNumber.classList.add('currentPage');
         console.log(pageNumber);
-      } else if (pageNumber.id != gettingGames.selectedPage) {
-        pageNumber.classList.remove('currentPage');
-      }
+      } 
       gettingGames.getGamesWithFilters(getGamesByGenre);
     });
     //with subsequent clicks of the page numbers, the class lists are not updating to remove currentPage. it's savign teh state/history of having been clicked.
@@ -155,7 +156,10 @@ gettingGames.setUpEventListeners = function(){
       // a.classList.add('currentPage);
     // }
   });
-  // do a for each to target the id of the selected a  
+  // do a for each to target the id of the selected a  ?
+
+  //~~~ put the event listener on the whole dom and save the targets of the dropdown and the page list and make an event handler for change to either of these points - probably a conditional. 
+    // make another conditional for if the infoButton is clicked and call the modal event handler
 }
 
 gettingGames.pagination = function (numOfGames) {
@@ -166,8 +170,6 @@ gettingGames.pagination = function (numOfGames) {
   // give the lis the same value as the count
   //~not needed at this juncture // update the value of pageNum based on the li the user selects with the click event
   // call the gettingGames.getGamesWithFilters method with the updated pageNum
-
-  
 }
 
 // Create a method (getGamesByGenre) to make API calls, which takes the user input as a parameter (userQuery) - receives arguments of userQueries when called in the event listeners 
@@ -214,15 +216,14 @@ gettingGames.getGamesWithFilters = function (userGenre) {
 // When the API call is successful, display the result by appending the data to the results div
 // If the API call fails, display an error message
 
-
+gettingGames.init();
 
 // Stretch goals
   // Popup modal button for instructions, the user can click on to open for the instructions on how to use the app
     // Terri
 
- 
 
-  gettingGames.init();
+
 
 
   // see more than 20 games  - pagination?
