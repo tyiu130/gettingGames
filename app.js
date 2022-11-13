@@ -101,6 +101,9 @@ gettingGames.displayGames = function(arrayOfGames){
 
 // Create a method (getUserQuery) to update the variable (userQuery) based on user input from the dropdown(in a form) - event listeners
 gettingGames.setUpEventListeners = function(){
+  //~~~ put the event listener on the whole dom and save the targets of the dropdown and the page list and make an event handler for change to either of these points - probably a conditional. 
+    // make another conditional for if the infoButton is clicked and call the modal event handler
+    
   const userQuery = document.querySelector('#genre');
   let getGamesByGenre = '';
   userQuery.addEventListener('change', function (event) {
@@ -131,6 +134,15 @@ gettingGames.setUpEventListeners = function(){
     }
   })
 
+// let classList = gettingGames.selectedPage.classList;
+    // classList.toggle('currentPage');
+    // // having the styling reflect the page that the user has selected/is on
+    // // target the selected
+
+    // target
+    // the id of the a = if the value of gettingGames.selectedPage {
+      // a.classList.add('currentPage);
+    // }
   const pageNumbers = document.querySelectorAll('.pageNums');
   pageNumbers.forEach(pageNumber => {
     pageNumber.addEventListener('click', function (event) {
@@ -146,20 +158,11 @@ gettingGames.setUpEventListeners = function(){
       gettingGames.getGamesWithFilters(getGamesByGenre);
     });
     //with subsequent clicks of the page numbers, the class lists are not updating to remove currentPage. it's savign teh state/history of having been clicked.
-    // let classList = gettingGames.selectedPage.classList;
-    // classList.toggle('currentPage');
-    // // having the styling reflect the page that the user has selected/is on 
-    // // target the selected
-
-    // target 
-    // the id of the a = if the value of gettingGames.selectedPage {
-      // a.classList.add('currentPage);
-    // }
+    
   });
   // do a for each to target the id of the selected a  ?
 
-  //~~~ put the event listener on the whole dom and save the targets of the dropdown and the page list and make an event handler for change to either of these points - probably a conditional. 
-    // make another conditional for if the infoButton is clicked and call the modal event handler
+  
 }
 
 gettingGames.pagination = function (numOfGames) {
