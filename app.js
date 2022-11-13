@@ -103,7 +103,7 @@ gettingGames.displayGames = function(arrayOfGames){
 gettingGames.setUpEventListeners = function(){
   //~~~ put the event listener on the whole dom and save the targets of the dropdown and the page list and make an event handler for change to either of these points - probably a conditional. 
     // make another conditional for if the infoButton is clicked and call the modal event handler
-    
+
   const userQuery = document.querySelector('#genre');
   let getGamesByGenre = '';
   userQuery.addEventListener('change', function (event) {
@@ -148,13 +148,18 @@ gettingGames.setUpEventListeners = function(){
     pageNumber.addEventListener('click', function (event) {
       event.preventDefault();
       gettingGames.selectedPage = event.target.id;
+      const pageSelection = event.target;
+      pageSelection.classList.add('currentPage');
+      // pageSelection.classList.add
       // console.log(gettingGames.selectedPage);
-      if (pageNumber.id != gettingGames.selectedPage) {
-        pageNumber.classList.replace('currentPage', '');
-      } else if (pageNumber.id === gettingGames.selectedPage) {
-        pageNumber.classList.add('currentPage');
-        console.log(pageNumber);
-      } 
+      // ~~~ id's shouldn't be used to target nodes for styling
+        // the event handler should add to the class list if the node is the target of the click
+      // if (pageNumber.id != gettingGames.selectedPage) {
+      //   pageNumber.classList.replace('currentPage', '');
+      // } else if (pageNumber.id === gettingGames.selectedPage) {
+      //   pageNumber.classList.add('currentPage');
+      //   console.log(pageNumber);
+      // } 
       gettingGames.getGamesWithFilters(getGamesByGenre);
     });
     //with subsequent clicks of the page numbers, the class lists are not updating to remove currentPage. it's savign teh state/history of having been clicked.
@@ -179,16 +184,16 @@ gettingGames.pagination = function (numOfGames) {
   // pagination:
     // take the pageNum from a function that listens to the user interaction (nav buttons) and puts it into the api call
       // updates the variable: gettingGames.pageNum
-gettingGames.getGamesWithFilters = function (userGenre) {
+gettingGames.getGamesWithFilters = function (userGenre, currentPage) {
   gettingGames.url.search = new URLSearchParams({
     key: gettingGames.rawgApiKey,
     genres: userGenre,
     page_size: 24,
-    page: gettingGames.selectedPage
+    page: currentPage
     // ordering: '-matacritic'
-
   });
-  console.log(userGenre);
+  console.log(userGenre, currentPage);
+  // console.log(userGenre);
   fetch(gettingGames.url)
     .then(function (res) {
       if (res.ok) {
