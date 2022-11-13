@@ -107,6 +107,7 @@ gettingGames.setUpEventListeners = function(){
     getGamesByGenre = this.value;
     gettingGames.getGamesWithFilters(getGamesByGenre);
   });
+  
   const openBtn = document.querySelector('.infoPopup');
   const closeBtn = document.querySelector('.closeButton');
   const modal = document.querySelector('.modal');
