@@ -38,7 +38,7 @@ gettingGames.selectedPage = 1;
 gettingGames.init = function(){
   // gettingGames.getGames();
   gettingGames.setUpEventListeners();
-  gettingGames.getGamesWithFilters()
+  gettingGames.getGamesWithFilters();
 };
 
 // Create a method (getGames) to make API call on page load (no filtering by user inputs)
