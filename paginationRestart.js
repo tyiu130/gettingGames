@@ -150,10 +150,15 @@ gettingGames.handlingEvents = function () {
 } 
 
 gettingGames.paginationStyling = function(numberToHighlight){
-  numberToHighlight = gettingGames.selectedPage;
   const pageNumbers = document.querySelectorAll('.pageNums');
+  console.log(gettingGames.selectedPage);
+
   pageNumbers.forEach(pageNumber => {
+    // if (gettingGames.selectedPage === 1 ) {
+    //   pageNumber.classList.add('currentPage');
+    // } else 
     if (pageNumber.id === numberToHighlight) {
+      console.log('hey');
       pageNumber.classList.add('currentPage');
     } else {
       // make sure all ofther a's class lists only have pageNums
